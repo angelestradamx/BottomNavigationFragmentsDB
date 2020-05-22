@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RecyclerViewUdelP</string>
+    <string name="textName">Nombre Completo</string>
+    <string name="textGender">Género</string>
+    <string name="textDateBirth">Fecha de nacimiento</string>
+    <string name="Photo">Foto empleado</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtTitleRegistry">Registro Empleado</string>
+    <string name="hintName">Nombres de empleado</string>
+    <string name="hintLastName">Apellidos del empleado</string>
+    <string name="hintJob">Puesto del empleado</string>
+    <string name="btnSave">guardar</string>
+</resources>
