@@ -75,7 +75,6 @@ class EmployeesAdapter(val employeeList:ArrayList<EmployeeEntity>,val context: C
             val intent = Intent(holder.itemView.context,DetailActivity::class.java)
             intent.putExtra("IdEmployee",employeeList[position].id.toString())
             holder.itemView.context.startActivity(intent)
-
         }
     }
 

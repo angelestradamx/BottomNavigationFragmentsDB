@@ -13,6 +13,7 @@ import com.example.recyclerviewudelp.Data.EmployeeEntity
 import com.example.recyclerviewudelp.Fragments.FormFragment
 import com.example.recyclerviewudelp.Fragments.HomeFragment
 import com.example.recyclerviewudelp.Fragments.ListFragment
+import com.example.recyclerviewudelp.Tools.ApiRest
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        val myApi= ApiRest(this@MainActivity)
+        val answerApiRest= myApi.getAllString()
+        Log.d("MI SERVICIO RESPONSE ACTIVITY MAIN!!","$answerApiRest")
 
         val menuAdapter = MenuBottomAdapter(initFragment(),supportFragmentManager)
         viewPager.adapter= menuAdapter
@@ -65,10 +71,10 @@ class MainActivity : AppCompatActivity() {
     fun initFragment():ArrayList<Fragment>{
 
          return arrayListOf(
-             HomeFragment.newInstance(),
-             ListFragment.newInstance(),
-             FormFragment.newInstance()
-         )
+            HomeFragment.newInstance(),
+            ListFragment.newInstance(),
+            FormFragment.newInstance()
+        )
     }
 
 }

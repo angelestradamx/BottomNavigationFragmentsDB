@@ -11,7 +11,6 @@ import com.example.recyclerviewudelp.Data.EmployeeDb
 import com.example.recyclerviewudelp.R
 import kotlinx.android.synthetic.main.fragment_detail.*
 
-
 private const val ARG_ID_EMPLOYEE = "IdEmployee"
 
 class DetailFragment : Fragment() {
@@ -26,9 +25,11 @@ class DetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             idEmployee=  it.getString(ARG_ID_EMPLOYEE).toString()
         }
+
     }
 
 
@@ -44,6 +45,7 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val employeeDb = EmployeeDb(mContext)
+
         val employee= employeeDb.employeeGetOne(idEmployee.toInt())
         txvFullName.text = "${employee?.name} ${employee?.lastName}"
         txvGender.text= if (employee?.gender == 1) "Masculino" else "Femenino"
@@ -54,11 +56,12 @@ class DetailFragment : Fragment() {
 
     companion object{
         @JvmStatic
-        fun newInstance(param1:String) = DetailFragment().apply {
+        fun newInstance(p1:String) = DetailFragment().apply {
             arguments = Bundle().apply {
-                putString(ARG_ID_EMPLOYEE,param1)
+                putString(ARG_ID_EMPLOYEE,p1)
             }
         }
+
     }
 
 }
